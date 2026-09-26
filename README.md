@@ -29,8 +29,8 @@ concierge-of-airbnbs/
 ├── promo/
 │   └── PROMO-PLAYBOOK.md          launch engine: style kit, 3 ready posts, partner
 │                                  handshakes, referral mechanics, order of ops
-└── site/
-    ├── index.html                 hostable sales/concierge page (brand: Concierge of Airbnbs)
+└── docs/                          served to GitHub Pages (branch main, path /docs)
+    ├── index.html                 sales/concierge page (brand: Concierge of Airbnbs)
     ├── doorman.html               interactive "the doorman is in" promo page (buzzboard)
     └── forms-pack.html            printable/notarizable form set (DBA · ownership · addendum)
 ```
@@ -45,14 +45,14 @@ concierge-of-airbnbs/
 
 ### ⬜ Phase 2 — Offer & forms
 
-4. [ ] Adopt the form set: `02-change-of-ownership-form.md` + `03-addendum-updated.md` (owner/renter signature set, printable — see `site/forms-pack.html`).
+4. [ ] Adopt the form set: `02-change-of-ownership-form.md` + `03-addendum-updated.md` (owner/renter signature set, printable — see `docs/forms-pack.html`).
 5. [ ] Have an attorney/lawyer review the documents once before first use (templates, not legal advice).
-6. [x] Add the form set to the site as a service line — DONE (`site/forms-pack.html` linked from the forms section).
+6. [x] Add the form set to the site as a service line — DONE (`docs/forms-pack.html` linked from the forms section).
 
 ### ⬜ Phase 3 — Site
 
-7. [ ] Host `site/index.html` (+ `doorman.html` promo page + `forms-pack.html`) — Netlify / GitHub Pages / Vercel. Brand **Concierge of Airbnbs**, operator "by Mark J Russell".
-8. [ ] Set the real business inbox — CTAs are already wired; update the single `CONTACT_EMAIL` constant in `site/index.html` and re-host.
+7. [x] Hosted — **LIVE** at <https://invision19.github.io/concierge-of-airbnbs/> (GitHub Pages, served from `/docs`; `index.html` + `doorman.html` + `forms-pack.html` all 200, mailto CTAs verified resolving in production).
+8. [ ] Set the real business inbox — CTAs currently wired to `jkcontractorsllc1@gmail.com` (marketing/dev inbox); update the single `CONTACT_EMAIL` constant in `docs/index.html` + `docs/doorman.html` when a dedicated business inbox exists, then push to re-deploy automatically.
 
 ### ⬜ Phase 4 — Operations
 
@@ -71,5 +71,5 @@ concierge-of-airbnbs/
 ## Current status
 
 - [x] Brand structure decided (DBA "Concierge of Airbnbs", alias "Mark J Russell").
-- [x] Form set drafted (ownership change + addendum) and site scaffolded.
-- [ ] User steps: file DBA, confirm NAICS, host site, open business bank account, set fee.
+- [x] Form set drafted (ownership change + addendum) and site scaffolded AND hosted at <https://invision19.github.io/concierge-of-airbnbs/>.
+- [ ] User steps: file DBA, confirm NAICS, open business bank account, set fee.
