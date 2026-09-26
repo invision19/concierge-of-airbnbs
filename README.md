@@ -26,10 +26,14 @@ concierge-of-airbnbs/
 │   ├── 04-owner-onboarding.md     owner intake record + onboarding checklist
 │   ├── 05-booking-flow.md         middleman booking/transaction runbook + fee placeholder
 │   ├── 06-booking-ledger.csv      per-booking ledger (bookkeeping + tax)
-│   └── 07-banking-cashflow-readiness.md  accounts/credit/wire path on EIN-only profile
+│   ├── 07-banking-cashflow-readiness.md  accounts/credit/wire path on EIN-only profile
+│   └── 08-mercury-application-kit.md  pre-answered Mercury app + owner-identity step
 ├── promo/
-│   └── PROMO-PLAYBOOK.md          launch engine: style kit, 3 ready posts, partner
-│                                  handshakes, referral mechanics, order of ops
+│   ├── PROMO-PLAYBOOK.md          launch engine: style kit, 3 ready posts, partner
+│   │                              handshakes, referral mechanics, order of ops
+│   ├── LAUNCH-PACK.md             paste-ready post copy (posts 1–3) + tracking note
+│   └── assets/
+│       └── post1-card.png         post 1 art — VACANT ✕ flips to OCCUPIED
 └── docs/                          served to GitHub Pages (branch main, path /docs)
     ├── index.html                 sales/concierge page (brand: Concierge of Airbnbs)
     ├── doorman.html               interactive "the doorman is in" promo page (buzzboard)
@@ -62,6 +66,8 @@ concierge-of-airbnbs/
 11. [ ] Set the concierge fee — placeholder in `ops/05-booking-flow.md` ($35/flat or 20% recommended); set before first booking.
 12. [x] Transaction ledger template ready — `ops/06-booking-ledger.csv`. Pending first booking.
 13. [x] Banking & cash-flow readiness documented — `ops/07-banking-cashflow-readiness.md` (EIN-only account path, one-pot money rules, reserve buffer).
+14. [x] Mercury application kit — `ops/08-mercury-application-kit.md` (pre-answered fields, preconditions, owner-identity caveat).
+15. [x] Launch posts created, paste-ready — `promo/LAUNCH-PACK.md` + post-1 art `promo/assets/post1-card.png`. Note: machine Buffer token is a Public-API token rejected by legacy REST (401, sunset 2027-02-01) — posts fire by hand until the Buffer account gets an OAuth token.
 
 ## Compliance notes (read before use)
 
@@ -74,4 +80,4 @@ concierge-of-airbnbs/
 
 - [x] Brand structure decided (DBA "Concierge of Airbnbs", alias "Mark J Russell").
 - [x] Form set drafted (ownership change + addendum) and site scaffolded AND hosted at <https://invision19.github.io/concierge-of-airbnbs/>.
-- [ ] User steps: file DBA, confirm NAICS, open business bank account (path in `ops/07`), set fee.
+- [ ] User steps: file DBA, confirm NAICS, **form the LLC + get EIN, then open the business bank account** (kit + path in `ops/08` + `ops/07`), set fee, paste-launch the 3 posts (`promo/LAUNCH-PACK.md`).

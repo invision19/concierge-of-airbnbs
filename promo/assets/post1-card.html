@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 1080px;
+        height: 1080px;
+        background: #07090f;
+        overflow: hidden;
+      }
+      .stage {
+        position: relative;
+        width: 1080px;
+        height: 1080px;
+        background-image: linear-gradient(
+          to bottom,
+          #0b0f1a 0%,
+          #07090f 55%,
+          #04050a 100%
+        );
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      .brass {
+        color: #d9a64f;
+      }
+      .pool {
+        position: absolute;
+        left: 50%;
+        top: 88px;
+        width: 320px;
+        height: 320px;
+        transform: translateX(-50%);
+        background: radial-gradient(
+          circle,
+          rgba(217, 166, 79, 0.3) 0%,
+          rgba(217, 166, 79, 0.1) 45%,
+          transparent 70%
+        );
+      }
+      .hanger {
+        position: absolute;
+        left: 50%;
+        top: 130px;
+        transform: translateX(-50%);
+        width: 430px;
+        height: 620px;
+        background: #141a28;
+        border: 2px solid #d9a64f;
+        border-radius: 26px;
+        box-shadow:
+          0 0 60px rgba(217, 166, 79, 0.12),
+          inset 0 0 40px rgba(0, 0, 0, 0.8);
+      }
+      .hang {
+        position: absolute;
+        left: 50%;
+        top: 110px;
+        transform: translateX(-50%);
+        font-size: 26px;
+        color: #d9a64f;
+        letter-spacing: 10px;
+      }
+      .vacant {
+        position: absolute;
+        top: 292px;
+        width: 100%;
+        text-align: center;
+        font-size: 76px;
+        color: #8b96a8;
+        letter-spacing: 8px;
+        text-decoration: line-through;
+        text-decoration-thickness: 5px;
+        text-decoration-color: #c0564b;
+      }
+      .x {
+        position: absolute;
+        top: 252px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 60px;
+        color: #c0564b;
+      }
+      .occupied {
+        position: absolute;
+        top: 470px;
+        width: 100%;
+        text-align: center;
+        font-size: 88px;
+        color: #7fbf7f;
+        letter-spacing: 6px;
+      }
+      .handled {
+        position: absolute;
+        top: 560px;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        color: #d9a64f;
+        letter-spacing: 4px;
+      }
+      .tag {
+        position: absolute;
+        top: 812px;
+        width: 100%;
+        text-align: center;
+        font-size: 44px;
+        color: #f2e9d8;
+        letter-spacing: 2px;
+      }
+      .sub {
+        position: absolute;
+        top: 878px;
+        width: 100%;
+        text-align: center;
+        font-size: 26px;
+        color: #8b96a8;
+      }
+      .dotted {
+        position: absolute;
+        top: 1010px;
+        width: 100%;
+        text-align: center;
+        font-size: 22px;
+        color: #5a6478;
+        letter-spacing: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <div class="pool"></div>
+      <div class="hang">&#9873;</div>
+      <div class="hanger"></div>
+      <div class="vacant">VACANT</div>
+      <div class="occupied">OCCUPIED</div>
+      <div class="handled">came back handled</div>
+      <div class="tag">The doorman is in.</div>
+      <div class="sub">
+        Concierge of Airbnbs &mdash; bookings, the money, the paperwork.<br />by
+        Mark J Russell
+      </div>
+      <div class="dotted">
+        &middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;
+      </div>
+    </div>
+  </body>
+</html>
