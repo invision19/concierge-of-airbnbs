@@ -25,7 +25,8 @@ concierge-of-airbnbs/
 ├── ops/                           operations pack (drafted)
 │   ├── 04-owner-onboarding.md     owner intake record + onboarding checklist
 │   ├── 05-booking-flow.md         middleman booking/transaction runbook + fee placeholder
-│   └── 06-booking-ledger.csv      per-booking ledger (bookkeeping + tax)
+│   ├── 06-booking-ledger.csv      per-booking ledger (bookkeeping + tax)
+│   └── 07-banking-cashflow-readiness.md  accounts/credit/wire path on EIN-only profile
 ├── promo/
 │   └── PROMO-PLAYBOOK.md          launch engine: style kit, 3 ready posts, partner
 │                                  handshakes, referral mechanics, order of ops
@@ -60,6 +61,7 @@ concierge-of-airbnbs/
 10. [x] Renter-side booking flow documented — `ops/05-booking-flow.md` (inquiry → offer → book → hold → stay → settle → close). Pending launch.
 11. [ ] Set the concierge fee — placeholder in `ops/05-booking-flow.md` ($35/flat or 20% recommended); set before first booking.
 12. [x] Transaction ledger template ready — `ops/06-booking-ledger.csv`. Pending first booking.
+13. [x] Banking & cash-flow readiness documented — `ops/07-banking-cashflow-readiness.md` (EIN-only account path, one-pot money rules, reserve buffer).
 
 ## Compliance notes (read before use)
 
@@ -72,4 +74,4 @@ concierge-of-airbnbs/
 
 - [x] Brand structure decided (DBA "Concierge of Airbnbs", alias "Mark J Russell").
 - [x] Form set drafted (ownership change + addendum) and site scaffolded AND hosted at <https://invision19.github.io/concierge-of-airbnbs/>.
-- [ ] User steps: file DBA, confirm NAICS, open business bank account, set fee.
+- [ ] User steps: file DBA, confirm NAICS, open business bank account (path in `ops/07`), set fee.
