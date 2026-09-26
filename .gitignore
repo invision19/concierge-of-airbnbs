@@ -1,1 +1,4 @@
 # deploy artifacts
+
+# identity / sensitive records (never commit — PII lives here, email-transfer only)
+entity-docs/

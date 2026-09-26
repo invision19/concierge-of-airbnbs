@@ -27,7 +27,8 @@ concierge-of-airbnbs/
 │   ├── 05-booking-flow.md         middleman booking/transaction runbook + fee placeholder
 │   ├── 06-booking-ledger.csv      per-booking ledger (bookkeeping + tax)
 │   ├── 07-banking-cashflow-readiness.md  accounts/credit/wire path on EIN-only profile
-│   └── 08-mercury-application-kit.md  pre-answered Mercury app + owner-identity step
+│   ├── 08-mercury-application-kit.md  pre-answered Mercury app + owner-identity step
+│   └── 09-llc-formation-checklist.md  15-min LLC formation + EIN path (unblocks Mercury)
 ├── promo/
 │   ├── PROMO-PLAYBOOK.md          launch engine: style kit, 3 ready posts, partner
 │   │                              handshakes, referral mechanics, order of ops
@@ -45,7 +46,7 @@ concierge-of-airbnbs/
 ### ⬜ Phase 1 — Entity & filings
 
 1. [ ] File/renew the **DBA**: Mark J Russell LLC, conducting business as **Concierge of Airbnbs** (`forms/01-dba-name-form.md` — fill, sign, file with your county).
-2. [ ] Lock the LLC's **NAICS** on EIN / business license / tax returns — **DECIDED: primary `531110` (Airbnb rental per user directive)**, secondary `561599` booking/concierge, `561410` document prep (`naics-codes.md`).
+2. [ ] **Form the LLC + get the EIN** — `ops/09-llc-formation-checklist.md` (15-min path: state SOS + irs.gov; entity + EIN unblock Mercury). Formation cert + EIN letter → `entity-docs/_identity/` (git-ignored, chmod 600).
 3. [ ] Open a **separate business bank account** in the DBA name (needed for the middleman transaction flows).
 
 ### ⬜ Phase 2 — Offer & forms
@@ -68,6 +69,7 @@ concierge-of-airbnbs/
 13. [x] Banking & cash-flow readiness documented — `ops/07-banking-cashflow-readiness.md` (EIN-only account path, one-pot money rules, reserve buffer).
 14. [x] Mercury application kit — `ops/08-mercury-application-kit.md` (pre-answered fields, preconditions, owner-identity caveat).
 15. [x] Launch posts created, paste-ready — `promo/LAUNCH-PACK.md` + post-1 art `promo/assets/post1-card.png`. Note: machine Buffer token is a Public-API token rejected by legacy REST (401, sunset 2027-02-01) — posts fire by hand until the Buffer account gets an OAuth token.
+16. [x] LLC formation checklist — `ops/09-llc-formation-checklist.md`. NAICS still keyed to EIN/license/tax-return step 2 (decided: 531110 primary, 561599, 561410).
 
 ## Compliance notes (read before use)
 
