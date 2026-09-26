@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Concierge of Airbnbs — Form Set (DBA · Change of Ownership · Addendum)
+    </title>
+    <style>
+      :root {
+        --ink: #1b2430;
+        --brand: #0f7b6c;
+        --accent: #e11d2e;
+        --muted: #5b6b7a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+        line-height: 1.55;
+        margin: 0;
+        background: #f4f2ed;
+      }
+      .toolbar {
+        position: sticky;
+        top: 0;
+        background: #1b2430;
+        color: #fff;
+        padding: 10px 16px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        z-index: 5;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 13px;
+      }
+      .toolbar b {
+        color: #7fd4c6;
+      }
+      .toolbar button {
+        background: var(--brand);
+        color: #fff;
+        border: 0;
+        border-radius: 6px;
+        padding: 8px 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .toolbar button:hover {
+        background: #0a5f54;
+      }
+      .doc {
+        background: #fff;
+        max-width: 8.5in;
+        margin: 18px auto;
+        padding: 0.9in 0.75in 0.9in 0.75in;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+        min-height: 11in;
+        position: relative;
+      }
+      .pagebreak {
+        break-before: page;
+      }
+      h1 {
+        font-size: 20px;
+        text-align: center;
+        margin: 0 0 4px;
+      }
+      h2 {
+        font-size: 14px;
+        text-align: center;
+        font-weight: normal;
+        margin: 0 0 22px;
+        color: var(--muted);
+      }
+      h3 {
+        font-size: 14px;
+        margin: 20px 0 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--brand);
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 4px;
+      }
+      p,
+      li {
+        font-size: 13.5px;
+      }
+      .blanks {
+        background: #fffbe8;
+        border: 1px solid #e8d9a0;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin: 10px 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 13px;
+      }
+      .blank {
+        color: var(--accent);
+        font-weight: 700;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+        font-size: 12.5px;
+      }
+      td,
+      th {
+        border: 1px solid #ccc;
+        padding: 8px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #f2f6f5;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 11.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+      }
+      .sig {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 28px;
+        margin: 22px 0;
+      }
+      .sig .line {
+        border-bottom: 1px solid #333;
+        height: 2px;
+      }
+      .sig label,
+      .fill label {
+        font-size: 10.5px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        display: block;
+      }
+      .fill {
+        margin: 14px 0;
+      }
+      .fill .line {
+        border-bottom: 1px solid #999;
+        height: 24px;
+      }
+      .notice {
+        border-left: 4px solid var(--accent);
+        background: #fdf1f1;
+        padding: 8px 12px;
+        font-size: 11.5px;
+        color: #7a3b3b;
+        margin: 16px 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      .checks label {
+        display: block;
+        font-size: 13px;
+        margin: 4px 0;
+      }
+      .checks input {
+        transform: scale(1.15);
+        margin-right: 6px;
+      }
+      .clause b {
+        color: var(--brand);
+      }
+      .var {
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      @media print {
+        body {
+          background: #fff;
+        }
+        .toolbar {
+          display: none;
+        }
+        .doc {
+          margin: 0;
+          box-shadow: none;
+          border: 0;
+          min-height: 0;
+          width: 100%;
+        }
+        .pagebreak {
+          break-before: page;
+        }
+        @page {
+          size: Letter;
+          margin: 0.75in 0.6in;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <b>Mark J Russell LLC · d/b/a Concierge of Airbnbs</b> — form set
+      &nbsp;·&nbsp;
+      <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <!-- ░░ DOC 1 · DBA ░░ -->
+    <section class="doc">
+      <h1>Fictitious Business Name (DBA) Application</h1>
+      <h2>
+        Form 01 — Mark J Russell LLC, conducting business as Concierge of
+        Airbnbs
+      </h2>
+      <div class="notice">
+        Template for document-preparation service — not legal advice. Confirm
+        your county/state official DBA form and filing fee; transfer these
+        answers onto it, sign, and file. Some jurisdictions require newspaper
+        publication.
+      </div>
+
+      <h3>1 · Registrant</h3>
+      <p>
+        Legal name: <span class="var"><b>Mark J Russell LLC</b></span> (LLC) ·
+        Member-managed · Member: <b>Mark J Russell</b><br />
+        State of formation: ____ State or jurisdiction ____ &nbsp;·&nbsp;
+        Registered address: ____ ____ ____ ____
+      </p>
+
+      <h3>2 · Business name to be conducted under (the DBA)</h3>
+      <div class="checks">
+        <label
+          ><input type="checkbox" checked /> <b>Concierge of Airbnbs</b> —
+          primary fictitious business name</label
+        >
+      </div>
+
+      <h3>3 · Alias / other names used in business</h3>
+      <div class="checks">
+        <label
+          ><input type="checkbox" checked /> <b>Mark J Russell</b> —
+          operating/operator alias of the LLC (used on contracts and by the
+          site).</label
+        >
+      </div>
+
+      <h3>4 · Business address</h3>
+      <p>
+        Street ____ &nbsp;City ____ &nbsp;State ____ &nbsp;ZIP ____
+        &nbsp;·&nbsp; Chief executive office address
+      </p>
+
+      <h3>5 · Business activity description</h3>
+      <p class="var">
+        "Airbnb-style short-term vacation rental operations and vacation-rental
+        concierge and booking agency: coordinating short-term rental bookings
+        and transactions between renters and Airbnb owners; document preparation
+        for rental ownership changes and addenda."
+      </p>
+
+      <h3>6 · NAICS</h3>
+      <p>
+        Primary: <b>531110</b> (Lessors of Residential Buildings and Dwellings)
+        · Secondary: 561599 (travel/concierge) · 561410 (document prep)
+      </p>
+
+      <h3>7 · Executed</h3>
+      <div class="fill">
+        <label
+          >Name (print): Mark J Russell — Sole Member, Mark J Russell LLC</label
+        >
+        <div class="line"></div>
+      </div>
+      <div class="fill">
+        <label>Signature:</label>
+        <div class="line"></div>
+      </div>
+      <div class="fill">
+        <label>Date:</label>
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <!-- ░░ DOC 2 · CHANGE OF OWNERSHIP ░░ -->
+    <section class="doc pagebreak">
+      <h1>Change of Ownership &amp; Assignment of Rental Operations</h1>
+      <h2>
+        Form 02 — between Transferor (outgoing owner), Transferee (incoming
+        owner), and the Concierge
+      </h2>
+      <div class="notice">
+        Template for document-preparation service — not legal advice. Have a
+        licensed professional review before first use. Sign in the presence of a
+        notary where indicated.
+      </div>
+
+      <p>
+        This Change of Ownership (this "Agreement") is made on
+        <b>____/____/20____</b>
+      </p>
+
+      <h3>Parties</h3>
+      <table>
+        <tr>
+          <th>Transferor (outgoing owner)</th>
+          <td>____________________________</td>
+        </tr>
+        <tr>
+          <th>Transferee (incoming owner)</th>
+          <td>____________________________</td>
+        </tr>
+        <tr>
+          <th>Concierge</th>
+          <td>
+            Mark J Russell LLC, d/b/a
+            <b>Concierge of Airbnbs</b> (booking/transaction middleman)
+          </td>
+        </tr>
+        <tr>
+          <th>Property / Listing</th>
+          <td>
+            Address: ____________________________ · Airbnb listing ID: ____ ·
+            Platform(s): ______________
+          </td>
+        </tr>
+      </table>
+
+      <div class="clause">
+        <h3>1 · Transfer of operations</h3>
+        <p>
+          On the Effective Date of <b>____/____/20____</b>, Transferor assigns
+          and transfers to Transferee all rights, duties, and interests in the
+          rental operation for the Property, including without limitation:
+          existing and future bookings; hosting authority for the listing; the
+          Concierge services relationship; and the right to receive all booking
+          proceeds from the Effective Date forward.
+        </p>
+
+        <h3>2 · Existing bookings</h3>
+        <p>
+          Bookings confirmed as of the Effective Date are honored on their
+          existing terms. Security deposits held for such bookings transfer to
+          Transferee, who shall refund or apply them per Airbnb platform rules.
+          Where Transferee cannot fulfill a booking, the Concierge rebooks or
+          cancels per Airbnb policy in good faith.
+        </p>
+
+        <h3>3 · Payout flows</h3>
+        <p>
+          The Concierge continues to process guest payments and disburse each
+          stay&#8217;s proceeds to <b>Transferee</b> from the Effective Date
+          forward. Proceeds for stays completed before the Effective Date settle
+          with Transferor outside the concierge flow.
+        </p>
+
+        <h3>4 · Representations</h3>
+        <p>
+          <b>Transferor</b> warrants the right to transfer the operations, no
+          undisclosed claims or liens blocking the transfer, and
+          deposits/prepaid amounts as disclosed. <b>Transferee</b> acknowledges
+          it has inspected the Property (or shall before its first managed stay)
+          and accepts operations "as available."
+        </p>
+
+        <h3>5 · Concierge consent &amp; continuity</h3>
+        <p>
+          The Concierge consents to the transfer and continues
+          booking/transaction services under the existing Agreement and current
+          Addendum on the same terms.
+        </p>
+
+        <h3>6 · Indemnity</h3>
+        <p>
+          Each party indemnifies the Concierge against claims arising from its
+          own side&#8217;s acts or omissions (pre- vs post-dating the Effective
+          Date) except the Concierge&#8217;s own negligence or willful
+          misconduct.
+        </p>
+
+        <h3>7 · Effective Date &amp; priority</h3>
+        <p>
+          This Agreement takes effect on the Effective Date and, with the
+          updated Addendum, supersedes contrary prior arrangements between the
+          parties regarding the transfer.
+        </p>
+      </div>
+
+      <div class="sig">
+        <div>
+          <label>Transferor signature</label>
+          <div class="line"></div>
+          <small style="color: var(--muted)"
+            >_____________________ · Date ____/____</small
+          >
+        </div>
+        <div>
+          <label>Transferee signature</label>
+          <div class="line"></div>
+          <small style="color: var(--muted)"
+            >_____________________ · Date ____/____</small
+          >
+        </div>
+      </div>
+      <div class="sig">
+        <div>
+          <label
+            >Concierge — by Mark J Russell, Sole Member (Mark J Russell LLC,
+            d/b/a Concierge of Airbnbs)</label
+          >
+          <div class="line"></div>
+          <small style="color: var(--muted)">_______ Date ____/____</small>
+        </div>
+      </div>
+
+      <h3>Notary acknowledgment (attach state form)</h3>
+      <p>
+        State of ______________ · County of ______________<br />
+        On ____/____/20____, before me, the undersigned notary public,
+        personally appeared ____________________, proved on the basis of
+        satisfactory evidence to be the person(s) whose name(s) appear above,
+        and acknowledged they executed the within instrument.<br /><br />
+        Notary signature: ____________________________ &nbsp;·&nbsp; Commission
+        expires: ____/____
+      </p>
+    </section>
+
+    <!-- ░░ DOC 3 · ADDENDUM ░░ -->
+    <section class="doc pagebreak">
+      <h1>Addendum to the Concierge &amp; Booking Services Agreement</h1>
+      <h2>
+        Form 03 — updated addendum (ownership, payout routing, fees, terms)
+      </h2>
+      <div class="notice">
+        Template for document-preparation service — not legal advice. Effective
+        Date ____/____/20____. Supersedes inconsistent prior terms.
+      </div>
+
+      <h3>Parties &amp; property</h3>
+      <p>
+        <b>Owner:</b> ______________________________ (current owner/operator) ·
+        <b>Property/Listing ID:</b> ____<br />
+        <b>Concierge:</b> Mark J Russell LLC, d/b/a <b>Concierge of Airbnbs</b>
+      </p>
+
+      <h3>1 · What this updates</h3>
+      <p>
+        This Addendum updates and, where inconsistent, supersedes the prior
+        Agreement ("Updated Terms"). Unchanged sections continue in full force.
+      </p>
+
+      <h3>2 · Ownership / operational change</h3>
+      <div class="checks">
+        <label
+          ><input type="checkbox" /> No change — original operating owner
+          remains.</label
+        >
+        <label
+          ><input type="checkbox" /> Ownership transferred per Change of
+          Ownership dated ____/____/20____ — new owner: ______________________
+        </label>
+      </div>
+
+      <h3>3 · Concierge role (middleman)</h3>
+      <p>
+        The Concierge
+        <b>coordinates bookings and processes transactions</b> between the Owner
+        and Renters: receives the intended stay, confirms availability, places
+        the reservation with the Owner&#8217;s listing; collects the stay amount
+        from the Renter, holds it, and disburses to the <b>Owner</b> per the
+        schedule below. The Concierge is a facilitator — not agent beyond
+        booking and settlement — and assumes no platform or property liability
+        beyond its own negligence.
+      </p>
+
+      <h3>4 · Payout routing (updated)</h3>
+      <p>
+        Owner payout: Bank: ____ · Holder: ____ · Account (last 4): ____<br />
+        Schedule:
+        <b>within 3 business days after guest check-in completes</b> (☐ or __%
+        held until 24h after check-in).<br />
+        Concierge fee: <b>______% of each stay</b> (or $ ____ per booking) —
+        disclosed to Renter and Owner before booking, deducted at settlement.<br />
+        Stays pre-change settle with the prior owner; stays from the Effective
+        Date settle with the Owner above.
+      </p>
+
+      <h3>5 · Updated contact &amp; emergency info</h3>
+      <p>
+        Owner/emergency: ________________ · ________________<br />Manager/cleaning:
+        ________________ · ________________
+      </p>
+
+      <h3>6 · Cancellation &amp; rebooking</h3>
+      <ul>
+        <li>
+          Renter: full refund ≥ 7 days before check-in; <b>50%</b> 3–7 days
+          before; none &lt; 3 days — unless Concierge rebooks at no loss, then
+          full credit/refund minus any fee already originated.
+        </li>
+        <li>
+          Owner-initiated: Owner refunds in full and pays any originated
+          Concierge fee; Concierge offers comparable dates when available.
+        </li>
+        <li>
+          Force majeure: handled per Airbnb policy with good-faith remediation.
+        </li>
+      </ul>
+
+      <h3>7 · Deposits, damages, disputes</h3>
+      <p>
+        Deposits/holds follow Airbnb rules. Damage claims: Owner notifies the
+        Concierge within 48h of check-out with photos. Disputes go through the
+        Concierge first; unresolved, per governing law (State: ______________).
+      </p>
+
+      <h3>8 · Taxes &amp; bookkeeping</h3>
+      <p>
+        Owner is responsible for its own lodging/income taxes; the Concierge
+        provides a per-booking transaction record (date, guest, amount, fee) on
+        request.
+      </p>
+
+      <h3>9 · Term &amp; amendment</h3>
+      <p>
+        In force until the next signed addendum. Either party may propose
+        updates; binding only when both sign.
+      </p>
+
+      <div class="sig">
+        <div>
+          <label>Owner signature</label>
+          <div class="line"></div>
+          <small style="color: var(--muted)">_____ Date ____/____</small>
+        </div>
+      </div>
+      <div class="sig">
+        <div>
+          <label
+            >Concierge — by Mark J Russell, Sole Member (Mark J Russell LLC,
+            d/b/a Concierge of Airbnbs)</label
+          >
+          <div class="line"></div>
+          <small style="color: var(--muted)">_____ Date ____/____</small>
+        </div>
+      </div>
+
+      <h3>Renter acknowledgment (issued with a booking)</h3>
+      <p>
+        I acknowledge the Updated Terms above. Renter: ______________________
+        Date ____/____
+      </p>
+
+      <p
+        style="
+          margin-top: 26px;
+          font-size: 11.5px;
+          color: var(--muted);
+          border-top: 1px solid #ddd;
+          padding-top: 10px;
+        "
+      >
+        Mark J Russell LLC, d/b/a <b>Concierge of Airbnbs</b> · NAICS 531110 ·
+        561599 · 561410<br />
+        Templates for document preparation — not legal advice. © 2026 Mark J
+        Russell LLC.
+      </p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+booking_ref,renter,property,checkin,checkout,gross_stay_usd,cleaning_usd,concierge_fee_usd,owner_payout_usd,platform_fee_usd,status
+CA-0001,J.Doe,House-A-1001,2026-10-01,2026-10-03,420.00,80.00,84.00,256.00,0.00,settled

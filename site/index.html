@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Concierge of Airbnbs — Vacation Rental Booking &amp; Ownership Transfers,
+      Taken Care Of
+    </title>
+    <meta
+      name="description"
+      content="Concierge of Airbnbs is the booking and transaction middleman between renters and available Airbnb owners — with the ownership-change forms and addenda to match. Operated by Mark J Russell."
+    />
+    <meta property="og:title" content="Concierge of Airbnbs" />
+    <meta
+      property="og:description"
+      content="Rent with confidence, own with peace of mind. Booking concierge + ownership paperwork for Airbnb rentals."
+    />
+    <style>
+      :root {
+        --ink: #1b2430;
+        --muted: #5b6b7a;
+        --brand: #0f7b6c;
+        --brand-dark: #0a5f54;
+        --accent: #e11d2e;
+        --bg: #f7f5f0;
+        --card: #ffffff;
+        --line: #e3dfd6;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .bar {
+        background: var(--ink);
+        color: #fff;
+        font-size: 12px;
+        padding: 6px 0;
+        text-align: center;
+        letter-spacing: 0.3px;
+      }
+      .bar b {
+        color: #7fd4c6;
+      }
+      nav {
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .navwrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .logo {
+        font-weight: 800;
+        font-size: 19px;
+        color: var(--brand);
+        text-decoration: none;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+      .logo small {
+        display: block;
+        font-weight: 400;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.4px;
+      }
+      .navlinks {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .navlinks a {
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .navlinks a:hover {
+        color: var(--brand);
+      }
+      .btn {
+        display: inline-block;
+        background: var(--brand);
+        color: #fff;
+        font-weight: 700;
+        padding: 11px 22px;
+        border-radius: 9px;
+        text-decoration: none;
+        font-size: 15px;
+        border: 0;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: var(--brand-dark);
+      }
+      .btn.ghost {
+        background: #fff;
+        color: var(--brand);
+        border: 1.5px solid var(--brand);
+      }
+      .btn.alt {
+        background: var(--accent);
+      }
+      .btn.alt:hover {
+        background: #b31222;
+      }
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .hero {
+        padding: 64px 20px 56px;
+        text-align: center;
+        background: linear-gradient(160deg, #0f7b6c 0%, #0a5f54 100%);
+        color: #fff;
+      }
+      .hero h1 {
+        font-size: 42px;
+        line-height: 1.15;
+        margin-bottom: 16px;
+        font-weight: 800;
+      }
+      .hero h1 span {
+        color: #ffd97a;
+      }
+      .hero p {
+        font-size: 18px;
+        max-width: 760px;
+        margin: 0 auto 26px;
+        opacity: 0.95;
+      }
+      .hero .sub {
+        font-size: 13px;
+        opacity: 0.75;
+        margin-top: 18px;
+      }
+      .cta-row {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      section {
+        padding: 56px 0;
+      }
+      .section-label {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 30px;
+        margin-bottom: 14px;
+        font-weight: 800;
+      }
+      .lede {
+        color: var(--muted);
+        font-size: 16px;
+        max-width: 720px;
+        margin-bottom: 26px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 22px;
+        box-shadow: 0 3px 12px rgba(20, 30, 40, 0.05);
+      }
+      .card h3 {
+        font-size: 17px;
+        margin-bottom: 8px;
+        color: var(--brand);
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .card .tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        margin-top: 10px;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+        counter-reset: s;
+      }
+      .step {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 20px;
+        position: relative;
+      }
+      .step::before {
+        counter-increment: s;
+        content: counter(s);
+        position: absolute;
+        top: -12px;
+        left: 16px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 800;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+      .step b {
+        display: block;
+        margin-bottom: 6px;
+      }
+      .step p {
+        color: var(--muted);
+        font-size: 13.5px;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+        align-items: start;
+      }
+      .fee {
+        background: #fff6e8;
+        border: 1px solid #f0d9a8;
+        border-radius: 12px;
+        padding: 22px;
+      }
+      .fee b {
+        color: var(--brand-dark);
+      }
+      .forms li {
+        margin-bottom: 10px;
+      }
+      .forms li b {
+        color: var(--brand-dark);
+      }
+      .disclaimer {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--accent);
+        border-radius: 8px;
+        padding: 18px 20px;
+        font-size: 13px;
+        color: var(--muted);
+        max-width: 860px;
+      }
+      .op {
+        margin-top: 26px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .op b {
+        color: var(--ink);
+      }
+      footer {
+        background: var(--ink);
+        color: #cbd5e0;
+        padding: 26px 20px;
+        font-size: 13px;
+        text-align: center;
+      }
+      footer b {
+        color: #fff;
+      }
+      footer a {
+        color: #7fd4c6;
+        text-decoration: none;
+      }
+      @media (max-width: 720px) {
+        .hero h1 {
+          font-size: 30px;
+        }
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bar">
+      Operated by <b>Mark J Russell LLC</b> — coming into your inbox, phone, and
+      bookings soon
+    </div>
+
+    <nav>
+      <div class="navwrap">
+        <a class="logo" href="#"
+          >Concierge<span> of</span> Airbnbs<small>by Mark J Russell</small></a
+        >
+        <div class="navlinks">
+          <a href="#how">How it works</a>
+          <a href="#services">For owners</a>
+          <a href="#for-renters">For renters</a>
+          <a href="#forms">Forms &amp; paperwork</a>
+          <a class="btn" href="#contact">Get on the list</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <h1>
+          Bookings, transactions, and ownership changes —
+          <span>taken care of.</span>
+        </h1>
+        <p>
+          Concierge of Airbnbs is the middleman you can trust: we match renters
+          with available Airbnb owners, handle the booking and the money, and
+          keep the paperwork clean so a property can change hands without a
+          single dropped reservation.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn alt" href="#contact"
+            >I&#8217;m a renter — book a stay</a
+          >
+          <a class="btn" href="#services"
+            >I own a listing — get concierge service</a
+          >
+        </div>
+        <p class="sub">
+          <a href="doorman.html" style="color: inherit"
+            >🔔 Step inside — the doorman is in.</a
+          >
+          &nbsp;·&nbsp; Booking concierge · Payout handling · Ownership-change
+          forms &amp; addenda · NAICS 531110 · 561599 · 561410
+        </p>
+      </div>
+    </header>
+
+    <section id="how" style="padding-top: 56px">
+      <div class="wrap">
+        <div class="section-label">How it works</div>
+        <h2>One concierge between the renter and the owner.</h2>
+        <div class="steps">
+          <div class="step">
+            <b>You tell us the dates.</b>
+            <p>
+              Tell us where and when. We confirm which Available Airbnb Owners
+              have the right place, right price.
+            </p>
+          </div>
+          <div class="step">
+            <b>We book it and handle the payment.</b>
+            <p>
+              The stay amount moves through Concierge of Airbnbs — collected
+              from the renter, settled to the owner. No chasing people.
+            </p>
+          </div>
+          <div class="step">
+            <b>We keep the paperwork straight.</b>
+            <p>
+              Updated addenda, ownership changes, payout details — drafted,
+              signed, filed to the parties. Every stay &amp; transfer
+              documented.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="services"
+      style="
+        background: #fff;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      "
+    >
+      <div class="wrap">
+        <div class="section-label">For Airbnb owners</div>
+        <h2>The concierge your listing deserves.</h2>
+        <p class="lede">
+          Lower the load, keep every booking, and never argue about money again.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>Booking matchmaking</h3>
+            <p>
+              Your listing sits on our available roster. Qualified renters are
+              matched to it automatically — with your pricing honored.
+            </p>
+            <span class="tag">Roster &amp; matching</span>
+          </div>
+          <div class="card">
+            <h3>Transaction middleman</h3>
+            <p>
+              Renters pay us; we pay you. Payout lands in your account within 3
+              business days of check-in. Clean ledger for your taxes.
+            </p>
+            <span class="tag">You get paid, reliably</span>
+          </div>
+          <div class="card">
+            <h3>Ownership-change paperwork</h3>
+            <p>
+              Sold the property? Taking over someone else&#8217;s? We draft the
+              Change of Ownership and the updated Addendum so no booking or
+              deposit falls through the cracks.
+            </p>
+            <span class="tag">Transfer-ready forms</span>
+          </div>
+        </div>
+        <div class="fee" style="margin-top: 24px">
+          <b>Concierge fee:</b> a flat percentage of each stay, disclosed to you
+          and the renter before booking and deducted at settlement. You see the
+          full statement every time — what was booked, what was collected, what
+          you got.
+        </div>
+      </div>
+    </section>
+
+    <section id="for-renters" style="background: var(--bg)">
+      <div class="wrap">
+        <div class="section-label">For renters</div>
+        <h2>Book a vetted stay without the gamble.</h2>
+        <p class="lede">
+          Every property on our roster is an Available Airbnb Owner we&#8217;ve
+          confirmed. You get the address, photos, and honest house rules up
+          front — and a tracked, handled stay.
+        </p>
+        <div class="two-col">
+          <div class="card">
+            <h3>What you get</h3>
+            <p style="margin-top: 6px">
+              Confirmed availability before you pay · One payment, tracked start
+              to finish · Updated owner/emergency contact on every booking · Our
+              resolution window if anything goes sideways after check-in.
+            </p>
+          </div>
+          <div class="card">
+            <h3>What we need from you</h3>
+            <p style="margin-top: 6px">
+              Dates, location, and guest count. We present the options; you
+              pick; we book. You sign the booking acknowledgment tied to the
+              Addendum — then pack.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="forms"
+      style="background: #fff; border-top: 1px solid var(--line)"
+    >
+      <div class="wrap">
+        <div class="section-label">Forms &amp; documents</div>
+        <h2>Useful ownership-change forms and an updated addendum.</h2>
+        <p class="lede">
+          Ready-to-sign templates for the paperwork that usually breaks a
+          transfer. Drafted and maintained by Mark J Russell LLC — notarizable,
+          printer-friendly, structured for your state&#8217;s official versions.
+        </p>
+        <div class="two-col">
+          <div class="card forms">
+            <h3>Change of Ownership form</h3>
+            <ul style="padding-left: 20px">
+              <li>
+                Transfers the listing, bookings, deposits, and concierge
+                relationship
+              </li>
+              <li>Assigns booking proceeds from a clear Effective Date</li>
+              <li>
+                Warranties, indemnities, and a notary acknowledgment block
+              </li>
+            </ul>
+          </div>
+          <div class="card forms">
+            <h3>Updated Addendum</h3>
+            <ul style="padding-left: 20px">
+              <li>Records the new owner and updated payout routing</li>
+              <li>Fresh cancellation/rebooking terms and emergency contacts</li>
+              <li>
+                Clear concierge role, fee disclosure, and deposit/damage
+                handling
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-top: 22px">
+          <a class="btn" href="forms-pack.html">Print the full form set</a>
+          <a class="btn ghost" href="#contact">Request copies</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="background: var(--bg)">
+      <div class="wrap">
+        <div class="section-label">Get in touch</div>
+        <h2>Ready when you are.</h2>
+        <p class="lede">
+          Concierge of Airbnbs is operated by <b>Mark J Russell LLC</b> (d/b/a
+          Concierge of Airbnbs — Mark J Russell, alias of the LLC). Bookings
+          opening shortly.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>Renters</h3>
+            <p>
+              Tell us where and when — we&#8217;ll reply with available owners
+              and rates.
+            </p>
+            <a
+              class="btn ghost"
+              data-cta="Renter inquiry — I want to book a stay"
+              href="#"
+              >Email us</a
+            >
+            <p class="tag contact-tag" style="margin-top: 10px">
+              Inbox: [set your email once below]
+            </p>
+          </div>
+          <div class="card">
+            <h3>Airbnb owners</h3>
+            <p>
+              Join the available roster and let us bring you booked, paid stays.
+            </p>
+            <a
+              class="btn ghost"
+              data-cta="Owner — add my listing to the roster"
+              href="#"
+              >Email us</a
+            >
+            <p class="tag contact-tag" style="margin-top: 10px">
+              Inbox: [same email]
+            </p>
+          </div>
+          <div class="card">
+            <h3>Subscribers</h3>
+            <p>
+              Get the go-live announcement + the ownership-change form pack when
+              we open.
+            </p>
+            <a
+              class="btn alt"
+              data-cta="Shortlist — notify me at launch"
+              href="#"
+              >Join the shortlist</a
+            >
+          </div>
+        </div>
+        <div class="disclaimer" style="margin-top: 26px">
+          <b>Templates, not legal advice.</b> The Change of Ownership form and
+          Addendum are document-preparation templates provided as a service by
+          Mark J Russell LLC — have them reviewed by a licensed professional
+          before first use in your state, and use the county&#8217;s official
+          DBA/notary formats where required. Concierge of Airbnbs is a booking
+          and transaction facilitator, not the platform Airbnb or a property
+          owner, and assumes no platform or property liability beyond its own
+          agreements.
+        </div>
+        <p class="op">
+          <b>Mark J Russell</b> · alias of Mark J Russell LLC, operator of
+          <b>Concierge of Airbnbs</b>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <b>Concierge of Airbnbs</b> — operated by Mark J Russell LLC (d/b/a
+      Concierge of Airbnbs) · NAICS 531110 (Airbnb rental), 561599 (booking
+      concierge), 561410 (document preparation)<br />
+      &copy; 2026 Mark J Russell LLC. All rights reserved.
+    </footer>
+
+    <script>
+      // ONE place to update when you have the real business inbox:
+      const CONTACT_EMAIL = "jkcontractorsllc1@gmail.com";
+      document.querySelectorAll("[data-cta]").forEach((a) => {
+        const subj = encodeURIComponent(a.dataset.cta);
+        a.href = `mailto:${CONTACT_EMAIL}?subject=${subj}`;
+      });
+      document.querySelectorAll(".contact-tag").forEach((n) => {
+        n.textContent = "Inbox: " + CONTACT_EMAIL;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concierge of Airbnbs — The Doorman Is In</title>
+    <meta
+      name="description"
+      content="There's a doorman for other people's Airbnbs. Buzz in — Concierge of Airbnbs handles the booking, the money, and the ownership change. Operated by Mark J Russell LLC."
+    />
+    <style>
+      :root {
+        --night: #0a0e14;
+        --night2: #10161f;
+        --brass: #c9a45c;
+        --brass-hi: #e6c884;
+        --cream: #f3ecd9;
+        --ink: #1b2430;
+        --accent: #e11d2e;
+        --v: #2fbf71;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background:
+          radial-gradient(
+            1200px 700px at 50% -10%,
+            #1b2436 0%,
+            var(--night) 60%
+          ),
+          linear-gradient(180deg, #0c1119 0%, #070a0f 100%);
+        color: var(--cream);
+        min-height: 100vh;
+      }
+      .ticker {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #000;
+        color: #8794a8;
+        font-family: "Courier New", monospace;
+        font-size: 11px;
+        letter-spacing: 1px;
+        padding: 6px 14px;
+        z-index: 40;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .ticker span {
+        display: inline-block;
+        padding-right: 40px;
+      }
+      .street {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 74px 16px 40px;
+        text-align: center;
+      }
+      .street h1 {
+        font-size: 13px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--brass);
+        margin-bottom: 14px;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      .street .script {
+        font-size: 52px;
+        line-height: 1.05;
+        font-weight: normal;
+      }
+      .street .script b {
+        color: #fff;
+        font-weight: normal;
+        font-size: 60px;
+      }
+      .street .script .amp {
+        color: var(--brass-hi);
+      }
+      .street .tag {
+        margin-top: 16px;
+        font-size: 17px;
+        color: #c6cdd9;
+        font-style: italic;
+      }
+      .awning {
+        background: linear-gradient(180deg, #9c1f2d, #6e1018);
+        color: #fff;
+        border-radius: 4px 4px 0 0;
+        display: inline-block;
+        padding: 8px 46px;
+        font-size: 15px;
+        letter-spacing: 1px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+      }
+      .facade {
+        position: relative;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+      .doorframe {
+        background: linear-gradient(180deg, #2b3444, #1d2431);
+        border: 10px solid #222a38;
+        border-bottom-width: 18px;
+        border-radius: 14px 14px 6px 6px;
+        padding: 26px 26px 30px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      }
+      .lobby-sign {
+        text-align: center;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 10px;
+        letter-spacing: 4px;
+        color: #7d889d;
+        margin-bottom: 18px;
+      }
+      .board {
+        background: linear-gradient(180deg, #12161f, #0c0f15);
+        border: 3px solid #2e3648;
+        border-radius: 10px;
+        padding: 16px;
+      }
+      .board-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #232b3b;
+        margin-bottom: 12px;
+        font-family: "Courier New", monospace;
+      }
+      .plate {
+        color: var(--brass-hi);
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+      .lamp {
+        color: var(--v);
+      }
+      .buzzer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #171d29;
+        border: 1px solid #2a3344;
+        border-radius: 9px;
+        padding: 13px 14px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition:
+          transform 0.06s ease,
+          border-color 0.15s ease,
+          box-shadow 0.15s ease;
+        text-align: left;
+      }
+      .buzzer:hover {
+        border-color: var(--brass);
+        transform: translateY(1px);
+      }
+      .buzzer:active {
+        transform: translateY(2px);
+      }
+      .buzzer .btn-la {
+        flex: 0 0 auto;
+        width: 44px;
+        height: 28px;
+        border-radius: 5px;
+        background: linear-gradient(180deg, #d9bc72, #a8843f);
+        color: #31230a;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-weight: 800;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #8f6f34;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          0 3px 8px #000;
+      }
+      .buzzer.ring {
+        border-color: var(--brass-hi);
+        box-shadow: 0 0 18px rgba(201, 164, 92, 0.55);
+      }
+      .buzzer .who {
+        flex: 1 1 auto;
+      }
+      .buzzer .who b {
+        display: block;
+        font-family: Georgia, serif;
+        font-size: 16px;
+        color: #fff;
+        font-weight: normal;
+        letter-spacing: 0.2px;
+      }
+      .buzzer .who small {
+        color: #8b97ab;
+        font-size: 11.5px;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      .buzzer .ib {
+        color: var(--v);
+        font-family: "Courier New", monospace;
+        font-size: 11px;
+      }
+      .slot {
+        margin-top: 14px;
+        border-top: 1px dashed #2a3344;
+        padding-top: 12px;
+        display: none;
+      }
+      .slot.open {
+        display: block;
+      }
+      .slot .note {
+        background: #fdf6e3;
+        color: var(--ink);
+        border-radius: 8px;
+        padding: 14px 16px;
+        font-size: 13.5px;
+        line-height: 1.6;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+      }
+      .slot .note b {
+        color: #8a2f16;
+      }
+      .slot .note .from {
+        display: block;
+        margin-top: 8px;
+        font-size: 11px;
+        color: #8a7a4f;
+        font-family: "Segoe UI", Arial, sans-serif;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .slot a {
+        display: inline-block;
+        margin-top: 10px;
+        background: var(--brass);
+        color: #221708;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-weight: 800;
+        font-size: 13px;
+        padding: 9px 16px;
+        border-radius: 7px;
+        text-decoration: none;
+      }
+      .slot a:hover {
+        background: var(--brass-hi);
+      }
+      .hanger {
+        position: absolute;
+        right: -70px;
+        top: 120px;
+        width: 150px;
+        background: #e8e0cc;
+        color: var(--ink);
+        border-radius: 8px;
+        padding: 10px 12px;
+        text-align: center;
+        transform: rotate(2deg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      .hanger small {
+        display: block;
+        font-size: 9px;
+        letter-spacing: 1px;
+        color: #7a6b45;
+        text-transform: uppercase;
+      }
+      .hanger b {
+        font-size: 18px;
+        color: #2a5c17;
+      }
+      .desk-log {
+        max-width: 520px;
+        margin: 18px auto;
+        background: #0c1017;
+        border: 1px dashed #2a3344;
+        border-radius: 10px;
+        padding: 12px 16px;
+        font-family: "Courier New", monospace;
+        font-size: 11px;
+        color: #7d889d;
+      }
+      .desk-log b {
+        color: var(--brass-hi);
+      }
+      .desk-log .log {
+        margin-top: 6px;
+        max-height: 120px;
+        overflow: auto;
+      }
+      .teardrop {
+        max-width: 520px;
+        margin: 0 auto 6px;
+        border-top: 2px dashed #3a465c;
+        color: #5c6a82;
+        font-size: 10px;
+        text-align: center;
+        padding-top: 10px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .matchstick {
+        text-align: center;
+        padding-bottom: 34px;
+      }
+      .matchstick p {
+        color: #8794a8;
+        font-size: 12px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+      .matchstick p b {
+        color: var(--brass-hi);
+      }
+      @media (max-width: 720px) {
+        .hanger {
+          position: static;
+          margin-top: 14px;
+          transform: none;
+          width: 100%;
+        }
+      }
+      @media print {
+        body {
+          background: #fff;
+          color: #000;
+        }
+        .ticker,
+        .hanger,
+        .buzzer,
+        .slot {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ticker">
+      <span id="ticktext"
+        >CONCIERGE OF AIRBNBS — EST. BY MARK J RUSSELL LLC · THERE&#8217;S A
+        DOORMAN FOR OTHER PEOPLE&#8217;S AIRBNBS · RENTERS BUZZ · OWNERS HAND
+        OVER THE KEYS · OWNERSHIP CHANGES LOSE NO BOOKINGS · NAICS 531110 ·
+        561599 · 561410 · CONCIERGE OF AIRBNBS — EST. BY MARK J RUSSELL LLC
+        ·</span
+      >
+    </div>
+
+    <main class="street">
+      <h1>Est. by Mark J Russell LLC</h1>
+      <div class="awning">
+        CONCIERGE<span style="opacity: 0.75"> OF </span>AIRBNBS
+      </div>
+      <h2 class="script">
+        The doorman for<br /><b>other people&#8217;s</b>
+        <span class="amp">airbnbs</span>.
+      </h2>
+      <p class="tag">
+        &#8220;Bookings don&#8217;t need an algorithm. They need a
+        butler.&#8221;
+      </p>
+    </main>
+
+    <div class="facade">
+      <div class="doorframe">
+        <div class="lobby-sign">— THE LOBBY · PLEASE RING —</div>
+        <div class="board">
+          <div class="board-head">
+            <span class="plate">DIRECT LINE</span
+            ><span class="lamp">● ON DUTY</span>
+          </div>
+
+          <button
+            class="buzzer"
+            id="buz-renter"
+            data-cta="Renter — I need a stay (buzzboard)"
+          >
+            <span class="btn-la">RING</span>
+            <span class="who"
+              ><b>I&#8217;m a renter — I need a stay.</b
+              ><small
+                >Tell us when + where; we answer with available owners.</small
+              ></span
+            >
+            <span class="ib">● free</span>
+          </button>
+
+          <button
+            class="buzzer"
+            id="buz-owner"
+            data-cta="Owner — put my listing on the board"
+          >
+            <span class="btn-la">KEYS</span>
+            <span class="who"
+              ><b>I own a listing — put it on the board.</b
+              ><small
+                >Renters find it, we handle payment + payouts to you.</small
+              ></span
+            >
+            <span class="ib">● open</span>
+          </button>
+
+          <button
+            class="buzzer"
+            id="buz-transfer"
+            data-cta="Changing owners — booking transfer help"
+          >
+            <span class="btn-la">KEYS</span>
+            <span class="who"
+              ><b>Keys changed hands — no booking gets left outside.</b
+              ><small
+                >Ownership change + updated addendum, printed &amp;
+                notarized.</small
+              ></span
+            >
+            <span class="ib">● doc</span>
+          </button>
+
+          <div class="slot" id="slot">
+            <div class="note" id="slotnote"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hanger">
+        <small>Swipe this hanger</small>
+        <b>VACANT ✕</b>
+        <small>danger of being unhosted</small>
+      </div>
+    </div>
+
+    <div class="desk-log">
+      <b>DESK LOG — live, honest, no bots</b>
+      <div class="log" id="log">
+        21:00 — door propped open. Stays handled: <b>0</b>. The first five
+        guests get the white-glove everything.
+      </div>
+    </div>
+
+    <div class="teardrop">T E A R A L O N G T H E D O T T E D L I N E</div>
+    <div class="matchstick">
+      <p>
+        <b>Concierge of Airbnbs</b> — bookings, transactions, and the paperwork
+        when a property changes hands. Operated by
+        <b>Mark J Russell LLC</b> (d/b/a Concierge of Airbnbs · alias: Mark J
+        Russell). Templates for document preparation — not legal advice. NAICS
+        531110 · 561599 · 561410.
+      </p>
+    </div>
+
+    <script>
+      const CONTACT_EMAIL = "jkcontractorsllc1@gmail.com";
+      const BY = {
+        subject: "Concierge of Airbnbs — buzz",
+        body: "Hi doorman — I buzzed from the site. ",
+      };
+      const NOTES = {
+        "buz-renter": {
+          who: "The doorman answers:",
+          txt: "Good evening. A roster owner is likely available for your dates. Tell me where and when and I&#8217;ll hold it and handle the money — the stay amount moves through us and lands with the owner within 3 days of check-in. First five guests: <b>the concierge fee is on the house</b>.",
+          from: "LETTERED, BY HAND — replies within minutes, not an algorithm",
+          cta: "Reply: I need a stay",
+        },
+        "buz-owner": {
+          who: "The doorman answers:",
+          txt: "Welcome aboard. Put your listing on the board and it starts appearing to renters who buzz in. We confirm availability, block your dates, collect the guest, and pay you out cleanly — every stay documented on one sheet, yours. No chasing people.",
+          from: "HANDED TO YOU UNDER THE LAMP",
+          cta: "Reply: add my listing",
+        },
+        "buz-transfer": {
+          who: "The doorman answers:",
+          txt: "This is the one that usually breaks: the property sold, and someone forgets the next reservation. Here it&#8217;s a printed set — Change of Ownership + the updated Addendum — signed, notarized, and the next guest never notices a thing.",
+          from: "THE PAPERWORK DRAWER",
+          cta: "Get the form set (free, printable)",
+        },
+      };
+      const LOG = document.getElementById("log");
+      const slot = document.getElementById("slot");
+      const slotnote = document.getElementById("slotnote");
+      function buzz(id) {
+        const n = NOTES[id];
+        const btn = document.getElementById(id);
+        btn.classList.remove("ring");
+        void btn.offsetWidth;
+        btn.classList.add("ring");
+        slotnote.innerHTML =
+          "<b class='from'>" +
+          n.who +
+          "</b>" +
+          n.txt +
+          "<span class='from'>" +
+          n.from +
+          "</span>";
+        const a = document.createElement("a");
+        a.href =
+          id === "buz-transfer"
+            ? "forms-pack.html"
+            : "mailto:" +
+              CONTACT_EMAIL +
+              "?subject=" +
+              encodeURIComponent(n.cta) +
+              "&body=" +
+              encodeURIComponent(BY.body + "[" + n.cta + "]");
+        a.textContent = n.cta;
+        a.className = "cta-link";
+        const old = slot.querySelector("a");
+        if (old) old.remove();
+        slot.appendChild(a);
+        slot.classList.add("open");
+        const t = new Date().toTimeString().slice(0, 5) + " — " + n.cta;
+        LOG.innerHTML += "<div>" + t + "</div>";
+      }
+      document.querySelectorAll(".buzzer").forEach((b) => {
+        const id = b.id;
+        b.addEventListener("click", () => buzz(id));
+      });
+    </script>
+  </body>
+</html>
